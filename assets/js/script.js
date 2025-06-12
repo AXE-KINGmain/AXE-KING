@@ -13,35 +13,35 @@ window.addEventListener('keydown', function(e) {
       (e.key === '+' || e.key === '-' || e.key === '=' || e.key === '_')) {
     e.preventDefault();
   }
-  // if (
-  //   e.key === 'F12' ||
-  //   (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
-  //   (e.ctrlKey && e.key === 'U')
-  // ) {
-  //   e.preventDefault();
-  //   return false;
-  //   // alert('Opening developer tools is disabled.');
-  // }
+  if (
+    e.key === 'F12' ||
+    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+    (e.ctrlKey && e.key === 'U')
+  ) {
+    e.preventDefault();
+    return false;
+    // alert('Opening developer tools is disabled.');
+  }
 });
 
-// let devtoolsOpen = false;
+let devtoolsOpen = false;
 
-// const threshold = 160; // порог размеров панели
+const threshold = 160; // порог размеров панели
 
-// setInterval(() => {
-//   const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-//   const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-//   if (widthThreshold || heightThreshold) {
-//     if (!devtoolsOpen) {
-//       devtoolsOpen = true;
-//       return false;
-//       // alert('Developer tools detected! Please close it.');
-//       // Здесь можно, например, перенаправить или скрыть содержимое
-//     }
-//   } else {
-//     devtoolsOpen = false;
-//   }
-// }, 1000);
+setInterval(() => {
+  const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+  const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+  if (widthThreshold || heightThreshold) {
+    if (!devtoolsOpen) {
+      devtoolsOpen = true;
+      return false;
+      // alert('Developer tools detected! Please close it.');
+      // Здесь можно, например, перенаправить или скрыть содержимое
+    }
+  } else {
+    devtoolsOpen = false;
+  }
+}, 1000);
 
 document.addEventListener('DOMContentLoaded', function() {
   // Get references to DOM elements
