@@ -31,6 +31,12 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Terminal shadow */
 }
 
+@media screen and (max-width: 600px) {
+  /* Adjust styles for smaller screens, such as phones */
+  #terminal {
+      max-width: 90%; /* Increase width for smaller screens */
+  }
+}
 /* Terminal header styles */
 #terminal-header {
   background-color: #2d2d2d; /* Header background color */
@@ -129,6 +135,27 @@ body {
   z-index: 0; /* Behind other content */
 }
 
+/* Positioning classes */
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
 /* Blurred box styles */
 #blurred-box {
   position: absolute;
@@ -143,7 +170,7 @@ body {
   box-shadow: 0 0 10px rgba(100, 100, 100, 0.5); /* Slightly blurred shadow */
   backdrop-filter: blur(5px); /* Apply blur effect */
   z-index: 999; /* Above other content */
-  display: block; /* Показываем по умолчанию */
+  display: none; /* Initially hidden */
   padding: 20px; /* Add padding */
   text-align: center; /* Center text horizontally */
   transition: background-color 0.3s; /* Smooth transition for background color */
@@ -217,7 +244,7 @@ body {
 
 #avatar-frame {
   position: absolute; /* Overlay on top of the profile picture */
-  top: 15%; /* Adjust to move it higher */
+  top: 15%; /* Adjust to move it higher (e.g., reduce from 50% to 40%) */
   left: 50%; /* Center horizontally within #blurred-box */
   transform: translate(-50%, -50%); /* Adjust for proper centering */
   width: 15% ; /* Slightly larger than the profile picture */
@@ -225,62 +252,4 @@ body {
   z-index: 1000; /* Ensure it is above the profile picture */
   pointer-events: none; /* Prevent interaction with the frame */
   display: none; /* Initially hidden */
-}
-
-/* Адаптация для мобильных устройств */
-@media screen and (max-width: 600px) {
-  #terminal {
-    width: 90vw;
-    height: 300px;
-    top: 10px;
-    left: 5vw;
-    font-size: 12px;
-    border-radius: 8px;
-  }
-
-  #terminal-content {
-    padding: 10px;
-    height: calc(100% - 40px);
-  }
-
-  #blurred-box {
-    width: 90vw;
-    height: auto;
-    top: auto;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 15px;
-    border-radius: 15px;
-  }
-
-  #blurred-box img#profile-picture {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 15px;
-  }
-
-  #username {
-    font-size: 1.2rem;
-  }
-
-  .user-description p {
-    font-size: 0.9rem;
-    padding: 8px;
-  }
-
-  .links {
-    position: static;
-    margin-top: 10px;
-    justify-content: center;
-  }
-
-  .links a i {
-    font-size: 28px;
-  }
-
-  /* Убираем кастомный курсор на мобилках */
-  body.custom-cursor {
-    cursor: auto !important;
-  }
 }
