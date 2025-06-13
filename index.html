@@ -2,16 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>[🐍] 𝐊 𝐈 𝐍 𝐆 🥷 Joseph Stalin</title>
-
-  <!-- Bootstrap 4 CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/x-icon" href="./assets/favico/default.ico">
 </head>
@@ -22,15 +16,12 @@
         Your browser does not support the audio element.
       </audio>
   </div>
-  <!-- Video Background -->
   <div id="video-background">
     <video autoplay muted loop id="myVideo">
       <source src="./assets/back/default.mp4" type="video/mp4">
       Your browser does not support HTML5 video.
     </video>
   </div>
-
-  <!-- Terminal Window -->
   <div id="terminal" class="custom-cursor">
     <div id="terminal-header" class="d-flex justify-content-start p-2">
       <div id="terminal-buttons" class="d-flex">
@@ -43,8 +34,6 @@
       <p id="terminal-text"></p>
     </div>
   </div>
-
-  <!-- Profile Box -->
   <div id="blurred-box" class="text-center">
     <img id="profile-picture" src="./assets/pfp/default.jpg" alt="Profile Picture" class="mb-3">
     <img id="avatar-frame" src="" alt="Avatar Frame">
@@ -60,8 +49,6 @@
           Japanese, Python, C#, C++, Java, Kotlin, and Swift.
         </p>
       </div>
-
-    <!-- Social Links -->
     <div class="links d-flex justify-content-center mt-3">
       <a onclick="window.open('https://www.instagram.com/_03_karimov_?igsh=dnYxbHQ0czhkMjI2', '_blank')" href="javascript:void(0);" target="_blank" class="mx-2 text-white">
         <i class="fab fa-instagram fa-lg"></i>
@@ -71,21 +58,15 @@
       </a>
     </div>
   </div>
-
-  <!-- Scripts -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const audio = document.getElementById("myAudio");
-
-      // Попробуем сразу запустить (на некоторых ПК сработает)
       audio.play().catch(() => {
-        // Если браузер не дал — запускаем при первом взаимодействии
         const enableAudio = () => {
           audio.play();
           document.removeEventListener("click", enableAudio);
           document.removeEventListener("touchstart", enableAudio);
         };
-
         document.addEventListener("click", enableAudio);
         document.addEventListener("touchstart", enableAudio);
       });
