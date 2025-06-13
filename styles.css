@@ -7,6 +7,15 @@ body {
   background-color: black;
 }
 
+input, textarea, select {
+  font-size: 16px; /* минимум 16px, чтобы Safari не включал зум */
+}
+
+html, body {
+    touch-action: manipulation;
+    overscroll-behavior: contain;
+  }
+
 /* Disable selection globally */
 * {
   -webkit-user-select: none;
