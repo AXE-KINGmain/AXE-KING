@@ -59,6 +59,11 @@
     </div>
   </div>
   <script>
+    document.addEventListener('gesturestart', function (e) {
+      e.preventDefault();
+    });
+  </script>
+  <script>
     document.addEventListener("DOMContentLoaded", function () {
       const audio = document.getElementById("myAudio");
       audio.play().catch(() => {
